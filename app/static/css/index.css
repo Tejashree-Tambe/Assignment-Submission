@@ -1,0 +1,52 @@
+body{
+    background-color: #00001d;
+    margin: 0%;
+    font-family: 'League Spartan';
+}
+
+/* navbar */
+.navbar{
+    color: #5ec9cc;
+    font-size: 78px;
+}
+
+.navbar a {
+    font-size: 40%;
+}
+
+.navbar .btn{
+    font-size: 30%;
+}
+
+.navbar .btn{
+    background-color: #5ec9cc;
+}
+
+
+/* homepage */
+.home_main h1, .home_main p{
+    color: white;
+}
+
+.home_main .btn{
+    font-size: 140%;
+    background-color: #f6836b;
+    color: white;
+}
+
+.home_main{
+    height: 650px;
+}
+
+/* .inbl {
+    display: inline-block;
+    vertical-align: top;
+    width: 50%;
+}
+.container {
+    white-space: nowrap;
+} */
+
+.navbar-brand{
+    color: white;
+}

@@ -1,0 +1,138 @@
+/* Title */
+.signup_title{
+    font-size: 40px;
+    text-align: center;
+    color: white;
+}
+
+.signup{
+    display: flex;
+    align-items: center;
+}
+
+/* Form starts */
+.signup_container{
+    position: left;
+    padding-left: 8%;
+    color: white;
+    width: 35%;
+    margin-left: 6%;
+    padding-top: 2%;
+}
+
+/* Form title */
+.signup_container h1, label{
+    color: white;
+}
+
+/* Labels */
+.signup_container label{
+    font-size: 20px;
+    margin-left: 10px;
+    margin-top: 7px;
+}
+
+.signup_container .desc{
+    height: 90px;
+
+}
+/* Inputs */
+.signup_container input, .signup_container select{
+    height: 40px;
+    width:400px;
+    opacity: 0.5;
+    border-radius: 10px;
+    font-size: 20px;
+}
+
+.signup_container select{
+    width: 260px;
+}
+
+.signup_container input::placeholder{
+    color: #270101;
+    font-size: 20px;
+    padding: 15px;
+}
+
+.signup_container p{
+    font-size: 20px; 
+    text-align: center;  
+}
+
+.signup_container a{
+    color: white;
+}
+
+/* Buttons */
+.signup_container button{
+    height: 50px;
+    width: 150px;
+    border-radius: 10px;
+    position: center;
+    align-items: center;
+    background-color: #f6836b;
+    font-size: 20px;
+}
+
+.signup_container h4 ul{
+    display: flex;
+    font-size: 20px;
+    list-style-type: none;
+}
+
+.signup_container h4 ul a{
+    font-size: 20px;
+}
+
+/* Input File */
+.file {
+    opacity: 0;
+    width: 0.1px;
+    height: 0.1px;
+    position: absolute;
+    display: none;
+}
+  
+.file-input label {
+    display: block;
+    position: relative;
+    width: 150px;
+    height: 38px;
+    border-radius: 25px;
+    margin-top: -35px;
+    margin-left: 105px;
+    background: linear-gradient(40deg,#ff6e6e,#d8d7f3);
+    box-shadow: 0 4px 7px rgba(0, 0, 0, 0.4);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #270101;
+    cursor: pointer;
+    transition: transform .2s ease-out;
+}
+
+.file-name {
+    position: absolute;
+    bottom: -25px;
+    left: 165px;
+    font-size: 0.8rem;
+    color: #555;
+}
+
+/* Background */
+.signup_background{
+    background-image: url("../img/login3.png");
+    height: 400px;
+    width: 100%;
+    margin-right: 4px;
+    position: relative;
+    background-size: cover;
+    background-repeat: no-repeat; 
+    
+}
+
+/* Update Grades */
+.update_grades input{
+    display: flex;
+}

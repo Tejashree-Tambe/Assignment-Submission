@@ -1,0 +1,101 @@
+.name_box{
+    background: #fff;
+    border-top:1px solid black;
+    border-radius: 10px;
+    box-shadow: 1px 10px 10px;
+    overflow: hidden;
+    height:180px;
+    width: 800px;
+    left: 22%;
+    right: 2%;
+}
+
+/* for view assignments */
+.assign_name_box{
+  background: #fff;
+  border-top:1px solid black;
+  border-radius: 10px;
+  box-shadow: 1px 10px 10px;
+  overflow: hidden;
+  width: 800px;
+  left: 30%;
+  right: 2%;
+}
+
+h4{
+    letter-spacing: 0.5px;
+    margin:14px;
+    color: black;
+}
+
+/* File Upload */
+
+.add_btn , .file_upload{
+    border: 1px solid transparent;
+    color: #fff;
+    font-size: 12px;
+    padding: 10px 20px;
+    bottom: 10px;
+    right: 150px;
+    letter-spacing: 1px;
+    cursor: pointer;
+    font-weight:bold;
+    transition: 0.3s ;
+    border-radius: 10px;
+}
+
+.file_upload {
+  bottom: 70px;
+  right: -200px;
+}
+
+.add_btn span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+  padding-top: 2%;
+}
+
+.add_btn span:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+.add_btn:hover span {
+  padding-right: 25px;
+  opacity: 1.5;
+}
+
+.add_btn:hover span:after {
+  opacity: 1.5;
+  right: 0;
+}
+
+/* view_assignments.css*/
+.grade-container {
+  display: flex;
+  align-items: center;
+}
+
+.grade-container input{
+  width: 400px;
+}
+
+.current-grade {
+  margin-right: 10px;
+}
+
+.grade-input {
+  width: 50px; /* Adjust the width as needed */
+}
+
+.assign_name_box a{
+  font-size: 30px;
+  margin:14px;
+  color: black;
+}

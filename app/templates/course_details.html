@@ -1,0 +1,60 @@
+{% load static %}
+{% include "header.html" %}
+
+
+<div class="dashboard_title">
+    
+    <p>Course Details</p>
+    
+</div>
+    <br><br><br><br><br><br>
+
+<div class="dashboard_page">
+    <div class="dashboard_border">
+        <div class="dashboard">
+            <br><br><br><br>
+            <label style="font-size:100px; background:#A8CDF3; border:3px solid black">{{ user.username|first|capfirst }}</label>
+            <p style="margin-top:-100px; margin-left: 150px;"><img width="24" height="24" src="https://img.icons8.com/material-rounded/24/marker.png" alt="marker">India</p>
+            <p style="margin-left: 150px;"><img width="18" height="18" src="https://img.icons8.com/ios-filled/50/calendar--v1.png">{{ user.date_joined.date }}</p><br>
+            <p>Name: {{ course_name }}</p>
+            <p>Course ID: {{ course_id }}</p><br>
+        </div>
+    </div>
+
+    <div class="cardlayout">
+        <div class="group">
+            <a href="{% url 'add_students' course_id %}">
+                <div class="card" style="margin-top: 100px;">
+                    <div class="card-text">
+                        <h2>Add Students</h2>
+                    </div>
+                </div>
+            </a>
+
+            <a href="{% url 'assignment_add' course_id %}">
+                <div class="card" style="margin-top: 100px;">
+                    <div class="card-text">
+                        <h2>Add Assignments</h2>
+                    </div>
+                </div>
+            </a>
+        </div>
+
+        <div class="group">
+            <a href="{% url 'view_assign' course_id %}">
+                <div class="card" style="margin-top: 100px;">
+                    <div class="card-text">
+                        <h2>View Assignments</h2>
+                    </div>
+                </div>
+            </a>
+        </div>
+
+        
+    </div>
+
+    
+</div>
+   
+
+{% include "footer.html" %}

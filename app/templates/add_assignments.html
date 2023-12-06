@@ -1,0 +1,31 @@
+{% include "header.html" %}
+
+<h1 class="signup_title">Add Assignments</h1>
+<div class="signup">
+    
+    <div class="signup_container">
+        <form action="{% url 'assignment_add' course_id %}" method="POST">
+            {% csrf_token %}
+            <label>Name:</label>
+            <input type="text" placeholder="Enter assignment name" required name="name"><br>
+            
+            <label>Date Of Submission:</label>
+            <input type="date" placeholder="Enter Date Of Submission" required name="dos"><br>
+
+            <label>Assignment ID number:</label>
+            <input type="number" placeholder="Enter id number" required name="assign_id"><br>
+
+            <label>Description:</label>
+            <input class="desc" type="text" placeholder="Enter assignment Description" required name="desc"><br>
+            
+            <button type="submit">Add Assignment</button>
+        </form>
+    </div>
+
+    <div class="signup_background">
+        
+    </div>
+</div>
+   
+
+{% include "footer.html" %}

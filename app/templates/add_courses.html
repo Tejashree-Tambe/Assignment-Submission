@@ -1,0 +1,25 @@
+{% include "header.html" %}
+
+<h1 class="signup_title">Add Courses</h1>
+<div class="signup">
+    
+    <div class="signup_container">
+        <form action='/add_courses/' method="POST">
+            {% csrf_token %}
+            <label>Course Name:</label>
+            <input type="text" placeholder="Enter Course name" required name="name"><br>
+
+            <label>Course Id:</label>
+            <input type="text" placeholder="Enter Course id" required name="id"><br>
+            
+            <button type="submit">Add</button>
+        </form>
+    </div>
+
+    <div class="signup_background">
+        
+    </div>
+</div>
+   
+
+{% include "footer.html" %}

@@ -1,0 +1,77 @@
+{% load static %}
+{% include "header.html" %}
+
+<h1 class="signup_title">Assignments</h1>
+<div class="signup">
+    
+    <div class="signup_container" style="width: 60%; font-size: 15px;">
+        <ul>
+            {% for assignment, links in assignment_links %}
+            <li class="assign_name_box" style="height: 500px; width: 1000px;">
+                {% if user.is_staff %}
+                <h4>Student Name: {{ assignment.assign_student.username }}</h4>
+                {% else %}
+                <h4>Professor Name: {{ assignment.assign_prof.username }}</h4>
+                {% endif %}
+                <h4>Assignment Name: {{ assignment.name }}</h4>
+                <h4>Assignment Description: {{ assignment.description }}</h4>
+                
+                <h4>Top References:
+                    <ul>
+                        {% for link in links %}
+                            <li><a href="{{ link }}" target="_blank">Reference {{ forloop.counter }} </a></li>
+                        {% endfor %}
+                    </ul>
+                </h4>
+
+                <h4>Assignment File: 
+                    {% if assignment.file %}
+                    <a style="color: black; font-size: 30px;" href="{{ assignment.file.url }}">{{assignment.file}}</a>
+                    {% else %}
+                        No file uploaded
+                    {% endif %}
+                </h4>
+
+                <form class="update_grades" action="{% url 'update_grades' course_id %}" method="POST">
+                    {% csrf_token %}
+                    <div class="grade-container">
+                        <h4 class="current-grade">Grade: {{ assignment.grade }}</h4>
+                        {% if user.is_staff and assignment.file %}
+                        <input type="text" name="grade" class="grade-input" placeholder="Enter new grade">
+                        {% endif %}
+                    </div>
+
+                    <div class="grade-container">
+                        <h4 class="current-grade">Feedback: {{ assignment.feedback }}</h4>
+                        {% if user.is_staff and assignment.file %}
+                        <input type="text" name="feedback" class="grade-input" placeholder="Enter new feedback">
+                        {% endif %}
+                    </div>
+                    
+                    <input type="text" name="assign_id" value="{{ assignment.assign_id }}"  style="display: none;">
+                    
+                    {% if user.is_staff %}
+                    <button style="width: 150px; margin-left: 80%; margin-top: -180%;" class="add_btn" type="submit"><span>Update</span></button>
+                    {% endif %}
+                    
+                </form>
+
+                {% if not user.is_staff and assignment.grade is None %}
+                <form action="{% url 'upload_file' %}" method="POST" enctype="multipart/form-data">
+                    {% csrf_token %}
+                    <input type="text" name="assign_id" value="{{ assignment.assign_id }}"  style="display: none;">
+                    <input class="file_upload" type="file" name="file" accept=".pdf">
+                    <button style="width: 150px;" class="add_btn"><span>Upload</span></button>
+                </form> 
+                {% endif %}  
+
+            </li>
+            <br><br><br><br><br><br>
+            {% endfor%}
+        </ul>
+            
+    </div>
+</div>
+   
+
+{% include "footer.html" %}
