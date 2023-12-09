@@ -17,7 +17,8 @@
             <p style="margin-top:-100px; margin-left: 150px;"><img width="24" height="24" src="https://img.icons8.com/material-rounded/24/marker.png" alt="marker">India</p>
             <p style="margin-left: 150px;"><img width="18" height="18" src="https://img.icons8.com/ios-filled/50/calendar--v1.png">{{ user.date_joined.date }}</p><br>
             <p>Name: {{ course_name }}</p>
-            <p>Course ID: {{ course_id }}</p><br>
+            <p>Course ID: {{ course_id }}</p>
+            <p>Semester: {{ course_semester }}</p><br>
         </div>
     </div>
 
@@ -48,9 +49,16 @@
                     </div>
                 </div>
             </a>
-        </div>
 
-        
+            <a href="{% url 'delete_student' course_id %}">
+                <div class="card" style="margin-top: 100px;">
+                    <div class="card-text">
+                        <h2>Remove Students</h2>
+                    </div>
+                </div>
+            </a>
+
+        </div>    
     </div>
 
     

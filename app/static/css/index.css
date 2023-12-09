@@ -22,6 +22,37 @@ body{
     background-color: #5ec9cc;
 }
 
+/* message box*/
+.alert {
+    padding: 20px;
+    background-color: #f44336;
+    color: white;
+    font-size: 130%;
+    text-align: center;
+}
+
+.alert.success {
+    background-color: #04AA6D;
+}
+  
+.alert.error {
+    background-color: #f44336;
+}
+  
+.closebtn {
+    margin-left: 15px;
+    color: white;
+    font-weight: bold;
+    float: right;
+    font-size: 32px;
+    line-height: 20px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+  
+.closebtn:hover {
+    color: black;
+}
 
 /* homepage */
 .home_main h1, .home_main p{
@@ -38,15 +69,39 @@ body{
     height: 650px;
 }
 
-/* .inbl {
-    display: inline-block;
-    vertical-align: top;
-    width: 50%;
-}
-.container {
-    white-space: nowrap;
-} */
-
 .navbar-brand{
     color: white;
+}
+
+
+/* Footer */
+.end
+{
+  padding-top: 5%;
+  opacity: 0.7;
+}
+
+.end_btns img{
+    position: fixed;
+    bottom:10px;
+    width:80px;
+    height:80px;
+    font-size: 20px;
+    border:none;
+    background-color: none;
+    outline:none;
+    cursor: pointer;
+}
+
+.end_btns img:hover{
+    opacity: 0.7;
+    outline:none;
+}
+.end_btns img:active{
+    outline:none;
+    border: none;
+}
+
+.backButton img  {
+    left: 40px;
 }

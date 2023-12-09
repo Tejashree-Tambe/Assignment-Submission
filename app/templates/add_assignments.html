@@ -1,10 +1,10 @@
 {% include "header.html" %}
 
-<h1 class="signup_title">Add Assignments</h1>
+<h1 class="signup_title">Add Assignments to Course: {{ course_name }}</h1>
 <div class="signup">
     
     <div class="signup_container">
-        <form action="{% url 'assignment_add' course_id %}" method="POST">
+        <form action="{% url 'assignment_add' course_id %}" method="POST" enctype="multipart/form-data">
             {% csrf_token %}
             <label>Name:</label>
             <input type="text" placeholder="Enter assignment name" required name="name"><br>
@@ -17,6 +17,9 @@
 
             <label>Description:</label>
             <input class="desc" type="text" placeholder="Enter assignment Description" required name="desc"><br>
+
+            <label>Additional Description:</label>
+            <input class="file_upload" type="file" name="description_file" accept=".pdf"><br><br><br>
             
             <button type="submit">Add Assignment</button>
         </form>

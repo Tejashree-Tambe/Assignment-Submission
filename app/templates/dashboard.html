@@ -18,11 +18,16 @@
             <label style="font-size:100px; background:#A8CDF3; border:2px solid black">{{ user.username|first|capfirst }}</label>
             <p style="margin-top:-100px; margin-left: 150px;"><img width="24" height="24" src="https://img.icons8.com/material-rounded/24/marker.png" alt="marker">India</p>
             <p style="margin-left: 150px;"><img width="18" height="18" src="https://img.icons8.com/ios-filled/50/calendar--v1.png">{{ user.date_joined.date }}</p><br>
-            <p>Name: {{ user.username }}</p>
-            <p>Role: {{ role }}</p>
-            <p>No of Courses: {{ course_count }}</p><br>
-            
-            
+            <form action="{% url 'edit_profile' %}" method="POST">
+                {% csrf_token %}
+                <p><p>Name: {{ user.username }} </p></p>
+                <p><p>Email: {{ user.email }} </p> <input id="email" class="edit_profile" type="email" placeholder="Enter your new email" name="new_email"></p>
+                <p> <input id="password" class="edit_profile" type="password" placeholder="Enter your new password" name="new_password"></p>
+                <p><p>Role: {{ role }}</p> </p>
+                <p><p>No of Courses: {{ course_count }}</p></p><br>
+                <button id="updateButton1" type="submit">Update</button>
+                <button id="editButton" type="button" onclick="clickMe()">Edit</button>
+            </form>
         </div>
     </div>
 
@@ -30,17 +35,17 @@
     <div class="cardlayout">
         <div class="group">
             <a href="/add_courses/">
-                <div class="card" style="margin-top: 100px;">
+                <div class="card" style="margin-top: -20%;">
                     <div class="card-text">
                         <h2>Add Courses</h2>
                     </div>
                 </div>
             </a>
 
-            <a href="#">
-                <div class="card" style="margin-top: 100px;">
+            <a href="{% url 'delete_course' %}">
+                <div class="card" style="margin-top: -20%;">
                     <div class="card-text">
-                        <h2>Visualization Of data</h2>
+                        <h2>Delete Course</h2>
                     </div>
                 </div>
             </a>
@@ -53,7 +58,9 @@
                 
                 <div class="card">
                     <div class="card-text">
-                        <h2>{{ course.name }}</h2>
+                        <h2 style="margin-top: -10%;">Course ID: {{ course.course_id }}</h2>
+                        <h2>Course: {{ course.name }}</h2>
+                        <h2>Semester: {{ course.semester }}</h2>
                     </div>
                 </div>
             </a>
@@ -68,19 +75,34 @@
     {% else %}
     <div class="cardlayout">
         <div class="group">
-            {% for course in courses %}
-            <a href="{% url 'view_assign' course.course_id %}">
-                
+            <a href="/view_courses/">
                 <div class="card">
                     <div class="card-text">
-                        <h2>{{ course.name }}</h2>
+                        <h2>View Courses</h2>
                     </div>
                 </div>
             </a>
-            {% endfor %}
+
+            <a href="{% url 'register_for_course' user.id %}">
+                <div class="card">
+                    <div class="card-text">
+                        <h2>Register For A Course</h2>
+                    </div>
+                </div>
+            </a>
+            
         </div>
 
-        
+        <div class="group">
+            <a href="/course_status/">
+                <div class="card">
+                    <div class="card-text">
+                        <h2>Check Courses Status</h2>
+                    </div>
+                </div>
+            </a>
+            
+        </div>
     </div>
     {% endif %}
 </div>

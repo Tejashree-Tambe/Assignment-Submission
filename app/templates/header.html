@@ -24,7 +24,7 @@
   <link rel="stylesheet" type="text/css" href="{% static 'css/dashboard.css' %}">
   <link rel="stylesheet" type="text/css" href="{% static 'css/add_students.css' %}">
 
-  <script src="{% static 'js/btn_function.js' %}"></script>
+  <script src="{% static 'js/btn_functions.js' %}"></script>
 
 </head>
 
@@ -41,3 +41,12 @@
     <a class="btn1 btn my-2 my-sm-0" style="color: #00001d;" href="/login">Login / Signup</a>
     {% endif %}
   </nav>
+
+  {% if messages %}
+    {% for message in messages %}
+      <div {% if message.tags %} class="alert {{ message.tags }}"{% endif %}>
+        <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span> 
+        <strong></strong> {{ message}}
+      </div>
+    {% endfor %}
+  {% endif %}

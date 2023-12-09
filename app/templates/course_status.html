@@ -1,0 +1,36 @@
+{% include "header.html" %}
+
+<h1 class="signup_title">Courses You Took</h1>
+<div class="signup">
+    
+    <div class="signup_container" style="width: 60%; font-size: 15px;">
+        <br><br>
+
+        <ul>
+            {% for course in course_assignments %}
+            <li class="name_box" style="height: 300px;">
+                
+                <h4>Course Name: {{ course.course.name }}</h4>
+                <h4>Course Id: {{ course.course.course_id }}</h4>
+                <h4>Professor Name: {{ course.course.prof.username }}</h4>
+                <h4>Semester: {{ course.course.semester }}</h4>
+                {% if course.requested_by_user %}
+                    <h4>Your request is {{ course.requested_by_user.status }}.</h4>
+                {% else %}
+                    <h4>You were added by Prof. {{ course.course.prof.username }}.</h4>
+                {% endif %}
+                
+                <h4>No Of Assignments: {{ course.assignments.count }}</h4>
+            </li>
+            <br><br><br><br><br><br>
+            {% endfor%}
+        </ul>
+            
+    </div>
+</div>
+   
+
+{% include "footer.html" %}
+   
+
+{% include "footer.html" %}

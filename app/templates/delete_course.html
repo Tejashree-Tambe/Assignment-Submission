@@ -1,0 +1,30 @@
+{% include "header.html" %}
+
+<h1 class="signup_title">Delete Courses</h1>
+<div class="signup">
+    
+    <div class="signup_container" style="width: 60%; font-size: 15px;">
+        <ul>
+            {% for course in courses %}
+            <li class="name_box">
+                <h4>Course Name: {{ course.name }}</h4>
+                <h4>Course Id: {{ course.course_id }}</h4>
+                <h4>Semester: {{ course.semester }}</h4>
+
+                <form action="{% url 'delete_course' %}" method="POST">
+                    {% csrf_token %}p
+                    
+                    <button style="width: 200px ; margin-left: 70%; margin-top:-100%;" class="add_btn" type="submit"><span>Delete course</span></button>
+                    <input type="text" name="course" value="{{ course.id }}" style="display: none;">
+                </form>
+
+            </li>
+            <br><br><br><br><br><br>
+            {% endfor%}
+        </ul>
+            
+    </div>
+</div>
+   
+
+{% include "footer.html" %}

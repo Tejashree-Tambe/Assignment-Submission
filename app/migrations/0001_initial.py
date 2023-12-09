@@ -20,8 +20,8 @@ class Migration(migrations.Migration):
                 ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
                 ('name', models.CharField(max_length=255)),
                 ('course_id', models.IntegerField()),
-                ('prof', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, related_name='prof_id', to=settings.AUTH_USER_MODEL)),
-                ('student', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, related_name='stud_id', to=settings.AUTH_USER_MODEL)),
+                ('prof', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, related_name='course_prof_id', to=settings.AUTH_USER_MODEL)),
+                ('student', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, related_name='course_stud_id', to=settings.AUTH_USER_MODEL)),
             ],
         ),
         migrations.CreateModel(
@@ -37,7 +37,7 @@ class Migration(migrations.Migration):
                 ('date_of_submission', models.DateTimeField()),
                 ('pending', models.BooleanField()),
                 ('finished', models.BooleanField()),
-                ('course_id', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='app.course')),
+                ('course_id', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='app.course', related_name='assign_course_id')),
             ],
         ),
     ]

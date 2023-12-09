@@ -1,0 +1,36 @@
+{% include "header.html" %}
+
+<h1 class="signup_title">Add Students</h1>
+<div class="signup">
+    
+    <div class="signup_container" style="width: 60%; font-size: 15px;">
+        <form style="margin-left: 10%;" method="GET" action="{% url 'search_students' course_id %}">
+            <label for="search_id">Search by ID:</label>
+            <input type="number" name="search_id" id="search_id" required>
+            <button type="submit">Search</button>
+        </form>
+        <br><br>
+
+        <ul>
+            <li class="name_box">
+                
+                <h4>Student Name: {{ student.username }}</h4>
+                <h4>Student Id: {{ student.id }}</h4>
+                <h4>Course Name: {{ course_name }} ({{ course_id }})</h4>
+
+                <form action="{% url 'add_students' course_id %}" method="POST">
+                    {% csrf_token %}
+                    
+                    <button style="width: 200px ; margin-left: 70%; margin-top:-100%;" class="add_btn" type="submit"><span>Add to course</span></button>
+                    <input type="text" name="user" value="{{ student.id }}" style="display: none;">
+                </form>
+
+            </li>
+            <br><br><br><br><br><br>
+        </ul>
+            
+    </div>
+</div>
+   
+
+{% include "footer.html" %}

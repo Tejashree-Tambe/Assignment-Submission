@@ -99,3 +99,7 @@ h4{
   margin:14px;
   color: black;
 }
+
+.update_grades input{
+  display: flex;
+}

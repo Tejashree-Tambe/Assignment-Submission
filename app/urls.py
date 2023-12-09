@@ -16,5 +16,14 @@ urlpatterns = [
     path('view_assign/<int:id>', views.view_assign, name='view_assign'),
     path('update_grades/<int:id>', views.update_grades, name='update_grades'),
     path('upload_file/', views.upload_file, name='upload_file'),
-
+    path('edit_profile/', views.edit_profile, name='edit_profile'),
+    path('delete_course/', views.delete_course, name='delete_course'),
+    path('delete_student/<int:id>', views.delete_student, name='delete_student'),
+    path('search_students/<int:id>', views.search_students, name='search_students'),
+    
+    path('register_for_course/<int:id>', views.register_for_course, name='register_for_course'),
+    path('view_courses/', views.view_courses, name='view_courses'),
+    path('dos_update/<int:id>', views.dos_update, name='dos_update'),
+    path('course_status/', views.course_status, name='course_status'),
+    
 ]
