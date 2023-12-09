@@ -93,9 +93,9 @@ submission_status = models.CharField(max_length=100, blank=True)<br>
 
 <b>4. StudentRequest</b><br>
 Fields: <br>
-student = models.ForeignKey(User, on_delete=models.CASCADE, related_name="stud_request_id")
-course = models.ForeignKey(Course, on_delete=models.CASCADE)
-status = models.CharField(max_length=20, default='pending')
+student = models.ForeignKey(User, on_delete=models.CASCADE, related_name="stud_request_id")<br> 
+course = models.ForeignKey(Course, on_delete=models.CASCADE)<br> 
+status = models.CharField(max_length=20, default='pending')<br> 
 <br><br>
 
 <!--<h1>Working:</h1>
