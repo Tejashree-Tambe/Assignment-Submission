@@ -17,6 +17,19 @@ MySQL (Server and Workbench)<br>
 <b>Backend:</b><br>
 1. Download Python (3.11+) executable file from <a href="https://www.python.org/downloads/">link</a>. On opening the .exe file, the installation process will be initiated and setup will be complete once you Click Run.<br>
 2. Download MySQL Server .msi file from <a href="https://dev.mysql.com/downloads/installer/">link</a> and MySQL Workbench .msi file from <a href="https://dev.mysql.com/downloads/workbench/">link</a>. On opening the .msi file, the installation process will be initiated. Click next until setup is complete.<br>
+3. Upon downloading the MySQL Server, go to start and type MySQL Installer - Community. Following .exe file will open. <br>
+   a. Click on Add as highlighted.
+
+![image](https://github.com/Tejashree-Tambe/Assignment-Submission/assets/68728212/a8d21e34-975d-42bc-bd28-d5d4b51f14ed)
+
+<br>
+  b. Extend the MySQL Connectors menu, then extend the Connector/Python. Under that menu, extend Connector/Python 8.0 and select the first connector and then send it to the Products to be installed box by clicking the -> arrow key. Then click Next.
+  
+![image](https://github.com/Tejashree-Tambe/Assignment-Submission/assets/68728212/a4ca685e-2bd3-47cf-befa-0d0b8a7691de)
+
+<br>
+
+  c. Click Next and Execute until installation is complete.
 
 <b>Frontend:</b><br>
 1. HTML<br>
@@ -42,7 +55,7 @@ sqlparse==0.4.<br>
 
 <b>1. Following are the steps to run the application.</b>
 
-Go to project/settings.py on line 78 and edit username, password to be that of your MySQL username and password. Update your hostname and port if it's different.<br>
+Go to project/settings.py on line 78 and edit username, password to be that of your MySQL username and password. Update hostname and port if it's different.<br>
 DATABASES = { <br>
     'default': { <br>
         'ENGINE': 'django.db.backends.mysql', <br>
@@ -53,22 +66,18 @@ DATABASES = { <br>
         'PORT': '3306', <br>
     }
 }
-
-Activate the virtualenv for your project.
-
-    $ python -m venv virt
     
 Install project dependencies:
 
     $ pip install -r requirements.txt
+
+Create a Database:
+
+    $ python mydb.py 
    
 Move to the project directory:
 
    $ cd project
-
-Create a Database:
-
-    $ python create_db.py 
 
 Apply the migrations:
 
