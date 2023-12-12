@@ -97,12 +97,18 @@ Run the development server:
 
     $ python manage.py runserver
 
-<b>2. Following are the steps to add professors to the portal.</b>
+<b> 2. Following are the steps to import the sql dump into the django application. Add the path of the .sql file in the format as shown </b>
+
+    $ python manage.py dbshell
+
+    mysql> source C:/Users/path/to/db_dump.sql
+
+<b>3. Following are the steps to add professors to the portal.</b>
 
 We will first create a superuser to access the admin portal.
 
     $ python manage.py createsuperuser
-        enter username, emailid and password.
+        enter username, emailid and password and proceed.
 
 Now, go to http://127.0.0.1:8000/admin and enter the username and password of the superuser you just created.
 
@@ -115,6 +121,12 @@ Enter the username and password for your professor. Select Save and continue edi
 Enter the email id of the professor and make sure the user is added as a staff by checking on the Staff Status box as shown in the picture. Go ahead and save the user.
 ![Web capture_12-12-2023_104740_127 0 0 1](https://github.com/Tejashree-Tambe/Assignment-Submission/assets/68728212/fdc0e0eb-1ac1-48e7-8123-9f13863712b4)
 
+<br><br>
+
+After doing so, the password and username can be used to log into the application.
+<br><br>
+
+<b>4. One can add students to the portal by signing up on the application.</b>
 
 <hr>
 
