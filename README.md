@@ -42,6 +42,18 @@ sqlparse==0.4.<br>
 
 <b>1. Following are the steps to run the application.</b>
 
+Go to project/settings.py on line 78 and edit username, password to be that of your MySQL username and password. Update your hostname and port if it's different.<br>
+DATABASES = { <br>
+    'default': { <br>
+        'ENGINE': 'django.db.backends.mysql', <br>
+        'NAME': 'assignment', <br>
+        'USER': 'username', <br>
+        'PASSWORD': 'password', <br>
+        'HOST': 'localhost', <br>
+        'PORT': '3306', <br>
+    }
+}
+
 Activate the virtualenv for your project.
 
     $ python -m venv virt
