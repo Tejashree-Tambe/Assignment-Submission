@@ -53,9 +53,7 @@ sqlparse==0.4.<br>
 
 <h1>Getting started</h1>
 
-<b>1. Following are the steps to run the application.</b>
-
-Go to project/settings.py on line 78 and edit username, password to be that of your MySQL username and password. Update hostname and port if it's different.<br>
+1. Go to project/settings.py on line 78 and edit username, password to be that of your MySQL username and password. Update hostname and port if it's different.<br>
 DATABASES = { <br>
     'default': { <br>
         'ENGINE': 'django.db.backends.mysql', <br>
@@ -64,14 +62,24 @@ DATABASES = { <br>
         'PASSWORD': 'password', <br>
         'HOST': 'localhost', <br>
         'PORT': '3306', <br>
-    }
-}
+    } <br>
+}<br>
+
+2. Go to line 5 of the mydb.py file in the current directory, and update the user = "username_of_your_sql", passwrd = "password_of_your_sql"  
+dataBase = mysql.connector.connect( <br>
+    host = "localhost", <br>
+    user = "username_of_your_sql", <br>
+    passwd = "password_of_your_sql", <br>
+)<br>
+<br>
+
+<b>1. Following are the steps to run the application.</b>
     
 Install project dependencies:
 
     $ pip install -r requirements.txt
 
-Create a Database:
+Create a Database: 
 
     $ python mydb.py 
    
