@@ -9,6 +9,6 @@ dataBase = mysql.connector.connect(
 
 cursorObject = dataBase.cursor()
 
-cursorObject.execute("CREATE DATABASE hello1")
+cursorObject.execute("CREATE DATABASE assignment")
 
 print("Database made")
