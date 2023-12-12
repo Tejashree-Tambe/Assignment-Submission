@@ -40,16 +40,24 @@ sqlparse==0.4.<br>
 
 <h1>Getting started</h1>
 
+<b>1. Following are the steps to run the application.</b>
+
 Activate the virtualenv for your project.
+
+    $ python -m venv virt
     
 Install project dependencies:
 
-    $ pip install -r requirements/local.txt
+    $ pip install -r requirements.txt
    
 Move to the project directory:
 
    $ cd project
-    
+
+Create a Database:
+
+    $ python create_db.py 
+
 Apply the migrations:
 
     $ python manage.py makemigrations
@@ -59,6 +67,25 @@ Apply the migrations:
 Run the development server:
 
     $ python manage.py runserver
+
+<b>2. Following are the steps to add professors to the portal.</b>
+
+We will first create a superuser to access the admin portal.
+
+    $ python manage.py createsuperuser
+        enter username, emailid and password.
+
+Now, go to http://127.0.0.1:8000/admin and enter the username and password of the superuser you just created.
+
+On logging in, you will find the following page, select +Add on the Users Model, as highlighted in the picture.
+![Web capture_12-12-2023_104834_127 0 0 1](https://github.com/Tejashree-Tambe/Assignment-Submission/assets/68728212/297fc9cc-1486-407c-9549-b006edc03725)
+
+Enter the username and password for your professor. Select Save and continue editing as shown in the picture below.
+![Web capture_12-12-2023_104815_127 0 0 1](https://github.com/Tejashree-Tambe/Assignment-Submission/assets/68728212/f06620f0-2b3b-496a-b1f4-077997428828)
+
+Enter the email id of the professor and make sure the user is added as a staff by checking on the Staff Status box as shown in the picture. Go ahead and save the user.
+![Web capture_12-12-2023_104740_127 0 0 1](https://github.com/Tejashree-Tambe/Assignment-Submission/assets/68728212/fdc0e0eb-1ac1-48e7-8123-9f13863712b4)
+
 
 <hr>
 
